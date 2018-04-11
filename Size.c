@@ -16,9 +16,9 @@ int main(int argc, char *argv[])
    char *path;
    size_t result;
    int k = 0;
-   FILE* f1 = fopen(argv[1], "rb");
-   path="0";
-   while(f1==NULL)
+      FILE* f1 = fopen(argv[1], "rb");
+      path="0";
+      while(f1==NULL)
     {
      if (path!="0")
      {
@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
    }
 
    fseek(f1, 0 , SEEK_END);
-   long lSize = ftell(f1);
+     long lSize = ftell(f1);
    rewind (f1);
 
    str = (char*) malloc(sizeof(char) * lSize);
@@ -44,7 +44,7 @@ int main(int argc, char *argv[])
     {
     printf("%c", c);
     }
-  printf("Found %d strings and %d bytes of information!\n", k, lSize);/*Written 100 records, total 26400 bytes*/
+    printf("Found %d strings and %d bytes of information!\n", k, lSize);/*Written 100 records, total 26400 bytes*/
   fclose (f1);
    return 0;
 }
